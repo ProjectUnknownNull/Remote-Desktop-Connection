@@ -18,6 +18,18 @@ jobs:
       run: |
         Set-LocalUser -Name "runneradmin" -Password (ConvertTo-SecureString -AsPlainText "P@ssw0rd!" -Force)
 
+    - name: Set Wallpaper
+      run: |
+        Invoke-WebRequest "https://cdn.discordapp.com/attachments/1499655960187244575/1502254363937341450/621e257c1c28a4f044288832ee6fc6bc.jpg?ex=69ff0ae6&is=69fdb966&hm=8b0c8bf814a71dd008c1ead070d42e1fb1874e29d0984a099f0d89e796051535&" -OutFile "$env:TEMP\wallpaper.jpg"
+
+        reg add "HKCU\Control Panel\Desktop" /v Wallpaper /t REG_SZ /d "$env:TEMP\wallpaper.jpg" /f
+
+        RUNDLL32.EXE user32.dll,UpdatePerUserSystemParameters
+
+    - name: Set User Icon
+      run: |
+        Invoke-WebRequest "https://media.discordapp.net/attachments/1499655960187244575/1502254363492614255/image.png?ex=69ff0ae6&is=69fdb966&hm=8583390eac5ec7ba5a20b371ff9f83667e5c85715400ea67e725493d6c5e24ec&=&format=webp&quality=lossless&width=366&height=364" -OutFile "C:\ProgramData\Microsoft\User Account Pictures\user.png"
+
     - name: Install Tailscale
       run: |
         Invoke-WebRequest https://pkgs.tailscale.com/stable/tailscale-setup-latest-amd64.msi -OutFile tailscale.msi
