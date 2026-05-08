@@ -30,13 +30,6 @@ jobs:
       run: |
         Invoke-WebRequest "https://media.discordapp.net/attachments/1499655960187244575/1502254363492614255/image.png?ex=69ff0ae6&is=69fdb966&hm=8583390eac5ec7ba5a20b371ff9f83667e5c85715400ea67e725493d6c5e24ec&=&format=webp&quality=lossless&width=366&height=364" -OutFile "C:\ProgramData\Microsoft\User Account Pictures\user.png"
 
-    - name: Set Dark Theme
-      run: |
-        reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize" /v AppsUseLightTheme /t REG_DWORD /d 0 /f
-        reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize" /v SystemUsesLightTheme /t REG_DWORD /d 0 /f
-
-        RUNDLL32.EXE user32.dll,UpdatePerUserSystemParameters
-
     - name: Install Tailscale
       run: |
         Invoke-WebRequest https://pkgs.tailscale.com/stable/tailscale-setup-latest-amd64.msi -OutFile tailscale.msi
