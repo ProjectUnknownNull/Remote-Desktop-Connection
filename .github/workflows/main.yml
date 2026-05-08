@@ -16,7 +16,7 @@ jobs:
 
     - name: Set Password
       run: |
-        Set-LocalUser -Name "Kerza" -Password (ConvertTo-SecureString -AsPlainText "password" -Force)
+        Set-LocalUser -Name "runneradmin" -Password (ConvertTo-SecureString -AsPlainText "P@ssw0rd!" -Force)
 
     - name: Set Wallpaper
       run: |
