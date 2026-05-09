@@ -20,7 +20,7 @@ jobs:
 
     - name: Set Wallpaper
       run: |
-        Invoke-WebRequest "https://cdn.discordapp.com/attachments/1499655960187244575/1502254363937341450/621e257c1c28a4f044288832ee6fc6bc.jpg?ex=69ff0ae6&is=69fdb966&hm=8b0c8bf814a71dd008c1ead070d42e1fb1874e29d0984a099f0d89e796051535&" -OutFile "$env:TEMP\wallpaper.jpg"
+        Invoke-WebRequest "https://i.ytimg.com/vi/8YodvN2DKoY/hq720.jpg?sqp=-oaymwE7CK4FEIIDSFryq4qpAy0IARUAAAAAGAElAADIQj0AgKJD8AEB-AH-CYAC0AWKAgwIABABGGAgZShOMA8=&rs=AOn4CLAm0NNnXcLl-Tf9Dy1t9NHLHBcrgA" -OutFile "$env:TEMP\wallpaper.jpg"
 
         reg add "HKCU\Control Panel\Desktop" /v Wallpaper /t REG_SZ /d "$env:TEMP\wallpaper.jpg" /f
 
