@@ -28,7 +28,7 @@ jobs:
 
     - name: Set User Icon
       run: |
-        Invoke-WebRequest "https://art.ngfiles.com/images/2947000/2947208_op4teen_new-pfp-insta.jpg?f1672054720" -OutFile "C:\ProgramData\Microsoft\User Account Pictures\user.png"
+        Invoke-WebRequest "https://s3-alpha.figma.com/hub/file/1745661902/08a40780-b6e6-4d69-9e99-52b45c9523e2-cover.png" -OutFile "C:\ProgramData\Microsoft\User Account Pictures\user.png"
 
     - name: Install Tailscale
       run: |
